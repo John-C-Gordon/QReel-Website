@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QReel — QR codes worth showing off</title>
+<meta name="description" content="QReel is a playful QR code generator for iPhone, iPad and Mac. Fully customizable codes, hi-res export and scan tracking. Coming soon to the App Store.">
+<link rel="icon" href="assets/app-icon.png">
+<link rel="stylesheet" href="qreel-site.css">
+</head>
+<body>
+<style>
+.heroA { position: relative; padding: 84px 0 92px; overflow: hidden; }
+.heroA .hero-bg { position: absolute; inset: 0; background: var(--hero-glow); pointer-events: none; }
+.heroA-grid { position: relative; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+.heroA-copy h1 { font-size: clamp(40px, 6.2vw, 72px); margin-top: 18px; }
+.heroA-copy > p { margin-top: 22px; font-size: 20px; line-height: 1.55; color: var(--text-secondary); max-width: 30ch; }
+.hero-cta { display: flex; gap: 14px; align-items: center; margin-top: 32px; flex-wrap: wrap; }
+.hero-meta { margin-top: 22px; color: var(--text-tertiary); font-weight: 700; font-size: 14px; }
+.heroA-device { display: flex; justify-content: center; }
+.phone {
+  position: relative; width: 320px; height: 650px;
+  background: linear-gradient(160deg, #0b515f, #073b4c);
+  border-radius: 52px; padding: 13px;
+  box-shadow: var(--shadow-float), inset 0 0 0 2px rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.phone-notch { position: absolute; top: 13px; left: 50%; transform: translateX(-50%); width: 128px; height: 30px; background: #04222b; border-radius: 0 0 18px 18px; z-index: 2; }
+.phone-screen { width: 100%; height: 100%; background: #073b4c; border-radius: 40px; padding: 52px 18px 22px; display: flex; flex-direction: column; }
+.app-top { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.app-eel { width: 30px; height: 30px; border-radius: 9px; background: url(assets/app-icon.png) center/cover; box-shadow: var(--shadow-tile); }
+.app-title { font-family: var(--font-rounded); font-weight: 600; font-size: 17px; color: #fff; white-space: nowrap; }
+.app-qr { background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 10px 26px rgba(0,0,0,0.3); margin: 8px 6px 0; }
+.app-qr canvas { width: 100%; display: block; }
+.app-tools { margin-top: auto; display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; padding-top: 18px; }
+.tool { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.tool span { width: 44px; height: 44px; border-radius: 14px; box-shadow: var(--shadow-tile); }
+.tool label { font-size: 9px; font-weight: 800; color: rgba(255,255,255,0.82); letter-spacing: 0.02em; }
+.t-pink span { background: var(--qr-pink); } .t-yellow span { background: var(--qr-yellow); }
+.t-emerald span { background: var(--qr-emerald); } .t-blue span { background: var(--qr-blue); }
+.t-export span { background: var(--qr-export-blue); }
+@media (prefers-reduced-motion: no-preference){ .heroA-device .phone { animation: floaty 6s ease-in-out infinite; } }
+@keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-12px);} }
+@media (max-width: 900px){ .heroA-grid { grid-template-columns: 1fr; gap: 40px; } .heroA-copy > p { max-width: none; } .heroA-device { order: -1; } .phone { transform: scale(0.9); } }
+.hero-cta .btn { flex: none; white-space: nowrap; }
+.hero-soon { margin-top: 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.soon-badge { display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px; border-radius: var(--r-pill); background: var(--surface-card); border: 1px solid var(--hairline); color: var(--text-secondary); font-weight: 800; font-size: 13px; letter-spacing: 0.01em; }
+.soon-badge svg { width: 17px; height: 17px; }
+.soon-req { color: var(--text-tertiary); font-weight: 700; font-size: 14px; }
+</style>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="QReel home">
+      <img src="assets/app-icon.png" alt="QReel">
+      <span>QReel</span>
+    </a>
+    <nav class="nav-links">
+      <a class="hide-sm" href="index.html#features">Features</a>
+      <a class="hide-sm" href="index.html#pricing">Pricing</a>
+      <a class="btn btn-primary" style="padding:10px 20px;font-size:15px;white-space:nowrap;flex:none;" href="/cdn-cgi/l/email-protection#abd8dedbdbc4d9dfebdad9cecec785cadbdb94d8dec9c1cec8df96e5c4dfc2cdd28e999bc6ce8e999bdcc3cec58e999bfaf9cecec78e999bc7cadec5c8c3ced88dc9c4cfd296fbc7cecad8ce8e999bc7cedf8e999bc6ce8e999bc0c5c4dc8e999bdcc3cec58e999bfaf9cecec78e999bc2d88e999bcaddcac2c7cac9c7ce8e999bc4c58e999bdfc3ce8e999beadbdb8e999bf8dfc4d9ce85">Get notified</a>
+    </nav>
+  </div>
+</header>
+<section class="heroA">
+  <div class="hero-bg"></div>
+  <div class="wrap heroA-grid">
+    <div class="heroA-copy">
+      <span class="eyebrow reveal">Coming soon · iOS &amp; macOS</span>
+      <h1 class="display reveal" data-delay="60">QR codes worth<br>showing off.</h1>
+      <p class="reveal" data-delay="120">Style every pixel, drop in your logo, export in crisp vector, and track every scan — all from a friendly little app that costs less than your coffee.</p>
+      <div class="hero-cta reveal" data-delay="180">
+        <a class="btn btn-primary btn-lg" href="/cdn-cgi/l/email-protection#562523262639242216272433333a78372626692523343c3335226b1839223f302f7364663b33736466213e3338736466070433333a7364663a372338353e3325703439322f6b063a333725337364663a33227364663b337364663d383921736466213e3338736466070433333a7364663f257364663720373f3a37343a337364663938736466223e33736466172626736466052239243378">Get notified at launch</a>
+        <a class="btn btn-secondary btn-lg" href="#features">See features</a>
+      </div>
+      <div class="hero-soon reveal" data-delay="240">
+        <span class="soon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 12.78c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.97.9-3.76 2.28-1.61 2.79-.41 6.92 1.15 9.19.76 1.11 1.67 2.36 2.86 2.31 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.13 2.76-2.25.87-1.29 1.23-2.54 1.25-2.61-.03-.01-2.39-.92-2.41-3.64zM14.07 5.86c.64-.78 1.07-1.85.95-2.93-.92.04-2.03.61-2.69 1.38-.59.69-1.11 1.79-.97 2.84 1.02.08 2.07-.52 2.71-1.29z"/></svg>Coming soon on the App Store</span>
+        <span class="soon-req">iPhone · iPad · Mac</span>
+      </div>
+    </div>
+
+    <div class="heroA-device reveal" data-delay="160">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="app-top">
+            <span class="app-eel"></span>
+            <span class="app-title">New QR Code</span>
+          </div>
+          <div class="app-qr scan-frame">
+            <div class="brackets"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+            <canvas data-qr='{"grid":25,"style":"rounded","colors":["#118ab2","#06d6a0"],"angle":50,"logo":true,"seed":42}'></canvas>
+          </div>
+          <div class="app-tools">
+            <div class="tool t-pink"><span></span><label>Content</label></div>
+            <div class="tool t-yellow"><span></span><label>Shapes</label></div>
+            <div class="tool t-emerald"><span></span><label>Colors</label></div>
+            <div class="tool t-blue"><span></span><label>Logo</label></div>
+            <div class="tool t-export"><span></span><label>Export</label></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why QReel</span>
+      <h2 class="display">Make a QR code that looks like you.</h2>
+      <p>Four reasons QReel beats every other generator on the App Store — design freedom, print-ready output, real insight, and a price nobody else touches.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card f-pink reveal">
+        <div class="ic"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M40 56h40v40H40zM48 64v24h24V64zm120-8h48v48h-48zm8 8v32h32V64zM40 160h48v48H40zm8 8v32h32v-32z"/><path d="M112 56h40v24h-40zM160 120h24v40h-24zM112 120h24v24h-24zM136 176h24v32h-24zM176 176h40v32h-40zM112 176h0z" opacity="0.55"/></svg></div>
+        <h3>Fully Customizable QR Codes</h3>
+        <p>Restyle every pixel — rounded, dot or classic modules, multi-stop gradients, custom finder eyes, and your own logo dropped right in the center. No two codes look alike.</p>
+        <span class="tag">Shapes · Colors · Logo</span>
+      </article>
+
+      <article class="feature-card f-blue reveal" data-delay="80">
+        <div class="ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M128 152V40"/><path d="M88 80l40-40 40 40"/><path d="M48 120v88h160v-88"/></svg></div>
+        <h3>Hi-Res Export</h3>
+        <p>Export crisp, scalable artwork at any size — PNG, PDF and true vector SVG. Sharp enough for a business card or a billboard, with transparent backgrounds on demand.</p>
+        <span class="tag">PNG · PDF · SVG</span>
+      </article>
+
+      <article class="feature-card f-emerald reveal" data-delay="160">
+        <div class="ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M40 208V48"/><path d="M40 208h176"/><path d="M72 168l44-52 36 28 60-72"/></svg></div>
+        <h3>URL Scan Tracking</h3>
+        <p>Turn any link into a trackable code. See total scans, unique devices and trends over time, right inside the app — synced to your account across iPhone, iPad and Mac.</p>
+        <span class="tag">Live analytics</span>
+      </article>
+
+      <article class="feature-card f-yellow reveal" data-delay="240">
+        <div class="ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M128 64v128"/><path d="M160 96c0-15-14-24-32-24s-32 8-32 24 14 22 32 28 32 12 32 28-14 24-32 24-32-9-32-24"/></svg></div>
+        <h3>Lowest Price on the Market</h3>
+        <p>Other pro QR tools charge $9.99 and up every month. QReel gives you the whole toolkit — custom design, hi-res export and scan tracking — starting at just $2.99 a month.</p>
+        <span class="tag">One simple plan</span>
+      </article>
+    </div>
+
+    <div class="price-strip reveal" id="pricing">
+      <div class="pl">
+        <span class="price-eyebrow">Launch pricing</span>
+        <h3 class="display">One plan. Every feature.</h3>
+        <p>Unlimited styled codes, hi-res export and scan tracking across iPhone, iPad and Mac — for less than the $9.99&#8239;/month the others ask.</p>
+        <a class="btn price-cta" href="/cdn-cgi/l/email-protection#a8dbddd8d8c7dadce8d9dacdcdc486c9d8d897dbddcac2cdcbdc95e6c7dcc1ced18d9a98c5cd8d9a98dfc0cdc68d9a98f9facdcdc48d9a98c4c9ddc6cbc0cddb8ecac7ccd195f8c4cdc9dbcd8d9a98c4cddc8d9a98c5cd8d9a98c3c6c7df8d9a98dfc0cdc68d9a98f9facdcdc48d9a98c1db8d9a98c9dec9c1c4c9cac4cd8d9a98c7c68d9a98dcc0cd8d9a98e9d8d88d9a98fbdcc7dacd86">Get notified at launch</a>
+      </div>
+      <div class="pr">
+        <div class="plan-main"><span class="amt">$2.99</span><span class="per">/month</span></div>
+        <div class="plan-alt">or <strong>$29.99/year</strong> — save 16%</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div class="foot-brand">
+      <div class="fb"><img src="assets/app-icon.png" alt="QReel"><span>QReel</span></div>
+      <p>A playful, design-forward QR code generator for iPhone, iPad &amp; Mac. Make scannable art that looks like you.</p>
+    </div>
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="/cdn-cgi/l/email-protection#32414742425d404672434057575e1c5342420d414750585751460f7c5d465b544b1700025f57170002455a575c170002636057575e1700025e53475c515a5741">Get notified</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="/cdn-cgi/l/email-protection#7b080e0b0b14090f3b0a091e1e17551a0b0b"><span class="__cf_email__" data-cfemail="0d7e787d7d627f794d7c7f686861236c7d7d">[email&#160;protected]</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <span>© 2026 QReel. All rights reserved.</span>
+    <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></span>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="qr-art.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
