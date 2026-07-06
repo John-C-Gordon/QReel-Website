@@ -1,6 +1,6 @@
 /* QReel marketing site — shared behavior */
 (function () {
-  var LOGO = "assets/qreel-logo.png";
+  var LOGO = "assets/QReelWordmark.svg";
 
   /* ---- theme: QReel ships its signature dark teal ambient ---- */
   function initTheme() {
