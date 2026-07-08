@@ -1,3 +1,80 @@
+const NOT_FOUND_HTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Code Not Found · QReel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #073b4c;
+      font-family: 'Nunito', sans-serif;
+      color: #fff;
+      padding: 32px 24px;
+      text-align: center;
+      gap: 0;
+    }
+    .wordmark {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 38px;
+      color: #fff;
+      margin-bottom: 48px;
+      letter-spacing: -0.5px;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 24px;
+    }
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.65);
+      max-width: 300px;
+      margin: 0 auto 36px;
+    }
+    a {
+      display: inline-block;
+      background: #06d6a0;
+      color: #073b4c;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 14px;
+      transition: opacity 0.15s;
+    }
+    a:hover { opacity: 0.88; }
+  </style>
+</head>
+<body>
+  <div class="wordmark">QReel</div>
+  <div class="icon">🔗</div>
+  <h1>This QR code is no longer active</h1>
+  <p>The creator removed or deactivated this code. Make your own custom QR codes with QReel.</p>
+  <a href="https://qreel.app">Create a free QR code</a>
+</body>
+</html>`;
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -17,7 +94,10 @@ export default {
 
       const rows = await res.json();
       if (!rows.length || !rows[0].redirect_url) {
-        return new Response("Not found", { status: 404 });
+        return new Response(NOT_FOUND_HTML, {
+          status: 404,
+          headers: { 'Content-Type': 'text/html;charset=UTF-8' }
+        });
       }
 
       const { id: qrCodeId, redirect_url } = rows[0];
