@@ -71,7 +71,7 @@ const NOT_FOUND_HTML = `<!DOCTYPE html>
   <div class="icon">🔗</div>
   <h1>This QR code is no longer active</h1>
   <p>The creator removed or deactivated this code. Make your own custom QR codes with QReel.</p>
-  <a href="https://qreel.app">Create a free QR code</a>
+  <a href="https://qreel.app">Continue to qreel.app</a>
 </body>
 </html>`;
 
