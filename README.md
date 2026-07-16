@@ -24,3 +24,5 @@ Landing page + Terms of Service + Privacy Policy. No build step — plain HTML/C
 
 Edit `CNAME` if your domain differs, or delete it to serve from the default
 `*.github.io` address.
+
+Live Site: https://qreel.app
