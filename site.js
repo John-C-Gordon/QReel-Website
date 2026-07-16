@@ -1,6 +1,6 @@
 /* QReel marketing site — shared behavior */
 (function () {
-  var LOGO = "assets/qreel-logo.png";
+  var LOGO = "assets/QReel-app-icon-reef-1024.png";
 
   /* ---- theme: QReel ships its signature dark teal ambient ---- */
   function initTheme() {
@@ -98,7 +98,7 @@
     [supportModal, thanksModal].forEach(function (m) {
       if (!m) return;
       m.addEventListener("click", function (e) {
-        if (e.target.hasAttribute("data-close")) closeModal(m);
+        if (e.target.closest("[data-close]")) closeModal(m);
       });
     });
 
