@@ -128,6 +128,31 @@ p { margin: 0; }
 .nav-links a.appstore-btn,
 .nav-links a.appstore-btn:hover { color: #fff; background: #111; }
 
+/* ---- Theme toggle ---------------------------------------- */
+.theme-toggle {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 40px; padding: 0 6px 0 14px;
+  border: 1px solid var(--hairline);
+  background: var(--surface-card);
+  border-radius: var(--r-pill);
+  color: var(--text-secondary);
+  font-family: var(--font-ui); font-weight: 700; font-size: 13px;
+  cursor: pointer;
+  transition: transform 220ms var(--ease-liquid), border-color 180ms, color 180ms;
+}
+.theme-toggle:hover { color: var(--text-primary); border-color: var(--accent); }
+.theme-toggle:active { transform: scale(var(--press-scale)); }
+.theme-toggle .knob {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--accent); color: #fff;
+}
+.theme-toggle .knob svg { width: 16px; height: 16px; }
+.theme-toggle .t-light { display: none; }
+.theme-toggle .t-dark { display: inline; }
+[data-theme="light"] .theme-toggle .t-light { display: inline; }
+[data-theme="light"] .theme-toggle .t-dark { display: none; }
+
 /* ---- Buttons --------------------------------------------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -219,16 +244,8 @@ p { margin: 0; }
 .price-strip .pl h3 { font-size: 30px; color: #fff; }
 .price-strip .pl p { margin-top: 8px; color: rgba(255,255,255,0.86); font-size: 17px; }
 .price-strip .pr { display: flex; align-items: baseline; gap: 6px; }
-.price-strip .pl { max-width: 560px; }
-.price-strip .pr { flex-direction: column; align-items: flex-end; gap: 8px; text-align: right; }
-.price-strip .plan-main { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
 .price-strip .pr .amt { font-family: var(--font-rounded); font-weight: 600; font-size: 56px; line-height: 1; }
 .price-strip .pr .per { font-size: 17px; font-weight: 700; opacity: 0.85; }
-.price-strip .plan-alt { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.9); }
-.price-strip .plan-alt strong { font-weight: 800; }
-.price-eyebrow { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.82); margin-bottom: 12px; }
-.price-cta { margin-top: 24px; background: #fff; color: var(--qr-blue); box-shadow: 0 8px 22px rgba(0,0,0,0.18); }
-.price-cta:hover { filter: brightness(1.03); box-shadow: 0 12px 28px rgba(0,0,0,0.24); }
 
 /* ---- Footer ---------------------------------------------- */
 .foot { border-top: 1px solid var(--hairline); padding: 56px 0 64px; }
@@ -317,85 +334,4 @@ p { margin: 0; }
   .feature-grid { grid-template-columns: 1fr; }
   .nav-links .hide-sm { display: none; }
   .section { padding: 68px 0; }
-  .price-strip { flex-direction: column; align-items: flex-start; text-align: left; }
-  .price-strip .pl { max-width: none; }
-  .price-strip .pr { align-items: flex-start; text-align: left; }
 }
-
-/* ---- Modal / dialog -------------------------------------- */
-.modal {
-  position: fixed; inset: 0; z-index: 100;
-  visibility: hidden; pointer-events: none;
-  transition: visibility 0s linear 280ms;
-}
-.modal.open { visibility: visible; pointer-events: auto; transition-delay: 0s; }
-.modal-scrim {
-  position: absolute; inset: 0;
-  background: rgba(4,25,32,0.62);
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
-  opacity: 0; transition: opacity 260ms;
-}
-.modal.open .modal-scrim { opacity: 1; }
-.modal-shell {
-  position: absolute; inset: 0;
-  display: grid; place-items: center;
-  padding: 24px; overflow-y: auto;
-}
-.modal-card {
-  position: relative; width: 100%; max-width: 480px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-float);
-  padding: 36px 34px 32px;
-  opacity: 0; transform: translateY(14px) scale(0.98);
-  transition: transform 340ms var(--ease-spring), opacity 240ms;
-}
-.modal.open .modal-card { opacity: 1; transform: none; }
-.modal-close {
-  position: absolute; top: 16px; right: 16px;
-  width: 38px; height: 38px; border-radius: var(--r-pill);
-  display: grid; place-items: center; cursor: pointer;
-  background: var(--surface-card); border: 1px solid var(--hairline); color: var(--text-secondary);
-  transition: color 160ms, background 160ms, transform 240ms var(--ease-liquid);
-}
-.modal-close:hover { color: var(--text-primary); background: var(--hairline-2); }
-.modal-close:active { transform: scale(var(--press-scale)); }
-.modal-close svg { width: 18px; height: 18px; }
-.modal-card h2 { font-size: 28px; margin-top: 12px; }
-.modal-card > p.sub { margin-top: 10px; color: var(--text-secondary); font-size: 16px; line-height: 1.55; }
-
-.modal-success-ic {
-  width: 64px; height: 64px; border-radius: var(--r-lg);
-  background: var(--qr-emerald); display: grid; place-items: center;
-  box-shadow: var(--shadow-tile); margin-bottom: 22px;
-}
-.modal-success-ic svg { width: 34px; height: 34px; color: #fff; }
-
-/* ---- Form ------------------------------------------------ */
-.field { margin-top: 18px; }
-.field label {
-  display: block; font-weight: 800; font-size: 12px; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 8px;
-}
-.field input, .field textarea {
-  width: 100%; font-family: var(--font-ui); font-size: 16px; color: var(--text-primary);
-  background: var(--surface-card); border: 1px solid var(--hairline);
-  border-radius: var(--r-md); padding: 13px 15px;
-  transition: border-color 160ms, box-shadow 160ms;
-}
-.field input::placeholder, .field textarea::placeholder { color: var(--text-tertiary); }
-.field input:focus, .field textarea:focus {
-  outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(47,179,216,0.24);
-}
-.field textarea { resize: vertical; min-height: 118px; }
-.form-actions { margin-top: 26px; }
-.form-actions .btn { width: 100%; }
-.form-error {
-  margin-top: 16px; color: var(--qr-pink); font-weight: 700; font-size: 14px;
-  display: none;
-}
-.form-error.show { display: block; }
-.btn[aria-busy="true"] { opacity: 0.72; pointer-events: none; }
