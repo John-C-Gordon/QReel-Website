@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QReel — QR codes worth showing off</title>
-<meta name="description" content="QReel is a playful QR code generator for iPhone, iPad and Mac. Fully customizable codes, hi-res export and scan tracking. Coming soon to the App Store.">
+<meta name="description" content="QReel is a playful QR code generator for iPhone, iPad and Mac. Fully customizable codes, hi-res export, scan tracking — at the lowest price on the App Store.">
 <link rel="icon" href="assets/app-icon.png">
 <link rel="stylesheet" href="qreel-site.css">
 </head>
@@ -42,11 +42,6 @@
 @media (prefers-reduced-motion: no-preference){ .heroA-device .phone { animation: floaty 6s ease-in-out infinite; } }
 @keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-12px);} }
 @media (max-width: 900px){ .heroA-grid { grid-template-columns: 1fr; gap: 40px; } .heroA-copy > p { max-width: none; } .heroA-device { order: -1; } .phone { transform: scale(0.9); } }
-.hero-cta .btn { flex: none; white-space: nowrap; }
-.hero-soon { margin-top: 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.soon-badge { display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px; border-radius: var(--r-pill); background: var(--surface-card); border: 1px solid var(--hairline); color: var(--text-secondary); font-weight: 800; font-size: 13px; letter-spacing: 0.01em; }
-.soon-badge svg { width: 17px; height: 17px; }
-.soon-req { color: var(--text-tertiary); font-weight: 700; font-size: 14px; }
 </style>
 <header class="nav">
   <div class="wrap nav-inner">
@@ -57,7 +52,17 @@
     <nav class="nav-links">
       <a class="hide-sm" href="index.html#features">Features</a>
       <a class="hide-sm" href="index.html#pricing">Pricing</a>
-      <a class="btn btn-primary" style="padding:10px 20px;font-size:15px;white-space:nowrap;flex:none;" href="/cdn-cgi/l/email-protection#c1b2b4b1b1aeb3b581b0b3a4a4adefa0b1b1feb2b4a3aba4a2b5fc8faeb5a8a7b8e4f3f1aca4e4f3f1b6a9a4afe4f3f19093a4a4ade4f3f1ada0b4afa2a9a4b2e7a3aea5b8fc91ada4a0b2a4e4f3f1ada4b5e4f3f1aca4e4f3f1aaafaeb6e4f3f1b6a9a4afe4f3f19093a4a4ade4f3f1a8b2e4f3f1a0b7a0a8ada0a3ada4e4f3f1aeafe4f3f1b5a9a4e4f3f180b1b1e4f3f192b5aeb3a4ef">Get notified</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+        <span class="t-dark">Light</span><span class="t-light">Dark</span>
+        <span class="knob">
+          <svg class="t-dark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          <svg class="t-light" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+        </span>
+      </button>
+      <a class="appstore-btn" href="#download" style="padding:8px 16px 8px 13px;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 12.78c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.97.9-3.76 2.28-1.61 2.79-.41 6.92 1.15 9.19.76 1.11 1.67 2.36 2.86 2.31 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.13 2.76-2.25.87-1.29 1.23-2.54 1.25-2.61-.03-.01-2.39-.92-2.41-3.64zM14.07 5.86c.64-.78 1.07-1.85.95-2.93-.92.04-2.03.61-2.69 1.38-.59.69-1.11 1.79-.97 2.84 1.02.08 2.07-.52 2.71-1.29z"/></svg>
+        <span class="as-text"><span class="as-small">Download on the</span><span class="as-big" style="font-size:16px;">App Store</span></span>
+      </a>
     </nav>
   </div>
 </header>
@@ -65,17 +70,14 @@
   <div class="hero-bg"></div>
   <div class="wrap heroA-grid">
     <div class="heroA-copy">
-      <span class="eyebrow reveal">Coming soon · iOS &amp; macOS</span>
+      <span class="eyebrow reveal">QR Code Generator · iOS &amp; macOS</span>
       <h1 class="display reveal" data-delay="60">QR codes worth<br>showing off.</h1>
       <p class="reveal" data-delay="120">Style every pixel, drop in your logo, export in crisp vector, and track every scan — all from a friendly little app that costs less than your coffee.</p>
       <div class="hero-cta reveal" data-delay="180">
-        <a class="btn btn-primary btn-lg" href="/cdn-cgi/l/email-protection#5b282e2b2b34292f1b2a293e3e37753a2b2b64282e39313e382f6615342f323d227e696b363e7e696b2c333e357e696b0a093e3e377e696b373a2e3538333e287d39343f22660b373e3a283e7e696b373e2f7e696b363e7e696b3035342c7e696b2c333e357e696b0a093e3e377e696b32287e696b3a2d3a32373a39373e7e696b34357e696b2f333e7e696b1a2b2b7e696b082f34293e75">Get notified at launch</a>
+        <a class="appstore-btn" href="#download"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 12.78c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.97.9-3.76 2.28-1.61 2.79-.41 6.92 1.15 9.19.76 1.11 1.67 2.36 2.86 2.31 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.13 2.76-2.25.87-1.29 1.23-2.54 1.25-2.61-.03-.01-2.39-.92-2.41-3.64zM14.07 5.86c.64-.78 1.07-1.85.95-2.93-.92.04-2.03.61-2.69 1.38-.59.69-1.11 1.79-.97 2.84 1.02.08 2.07-.52 2.71-1.29z"/></svg><span class="as-text"><span class="as-small">Download on the</span><span class="as-big">App Store</span></span></a>
         <a class="btn btn-secondary btn-lg" href="#features">See features</a>
       </div>
-      <div class="hero-soon reveal" data-delay="240">
-        <span class="soon-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 12.78c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.97.9-3.76 2.28-1.61 2.79-.41 6.92 1.15 9.19.76 1.11 1.67 2.36 2.86 2.31 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.13 2.76-2.25.87-1.29 1.23-2.54 1.25-2.61-.03-.01-2.39-.92-2.41-3.64zM14.07 5.86c.64-.78 1.07-1.85.95-2.93-.92.04-2.03.61-2.69 1.38-.59.69-1.11 1.79-.97 2.84 1.02.08 2.07-.52 2.71-1.29z"/></svg>Coming soon on the App Store</span>
-        <span class="soon-req">iPhone · iPad · Mac</span>
-      </div>
+      <p class="hero-meta reveal" data-delay="240">Requires iOS 17 · iPadOS 17 · macOS 14 &nbsp;•&nbsp; One&#8209;time $2.99</p>
     </div>
 
     <div class="heroA-device reveal" data-delay="160">
@@ -135,21 +137,19 @@
       <article class="feature-card f-yellow reveal" data-delay="240">
         <div class="ic"><svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M128 64v128"/><path d="M160 96c0-15-14-24-32-24s-32 8-32 24 14 22 32 28 32 12 32 28-14 24-32 24-32-9-32-24"/></svg></div>
         <h3>Lowest Price on the Market</h3>
-        <p>Other pro QR tools charge $9.99 and up every month. QReel gives you the whole toolkit — custom design, hi-res export and scan tracking — starting at just $2.99 a month.</p>
-        <span class="tag">One simple plan</span>
+        <p>Pro QR tools charge monthly and lock your codes behind a subscription. QReel gives you everything for one small price — your codes stay yours, forever.</p>
+        <span class="tag">No subscription traps</span>
       </article>
     </div>
 
     <div class="price-strip reveal" id="pricing">
       <div class="pl">
-        <span class="price-eyebrow">Launch pricing</span>
-        <h3 class="display">One plan. Every feature.</h3>
-        <p>Unlimited styled codes, hi-res export and scan tracking across iPhone, iPad and Mac — for less than the $9.99&#8239;/month the others ask.</p>
-        <a class="btn price-cta" href="/cdn-cgi/l/email-protection#dfacaaafafb0adab9faeadbabab3f1beafafe0acaabdb5babcabe291b0abb6b9a6faedefb2bafaedefa8b7bab1faedef8e8dbabab3faedefb3beaab1bcb7baacf9bdb0bba6e28fb3babeacbafaedefb3baabfaedefb2bafaedefb4b1b0a8faedefa8b7bab1faedef8e8dbabab3faedefb6acfaedefbea9beb6b3bebdb3bafaedefb0b1faedefabb7bafaedef9eafaffaedef8cabb0adbaf1">Get notified at launch</a>
+        <h3 class="display">Everything, for one fair price.</h3>
+        <p>Unlimited styled codes, hi-res export and scan tracking. Compare that to the $9.99/month others ask.</p>
       </div>
       <div class="pr">
-        <div class="plan-main"><span class="amt">$2.99</span><span class="per">/month</span></div>
-        <div class="plan-alt">or <strong>$29.99/year</strong> — save 16%</div>
+        <span class="amt">$2.99</span>
+        <span class="per">one&#8209;time</span>
       </div>
     </div>
   </div>
@@ -165,7 +165,7 @@
         <h4>Product</h4>
         <a href="index.html#features">Features</a>
         <a href="index.html#pricing">Pricing</a>
-        <a href="/cdn-cgi/l/email-protection#10636560607f626450616275757c3e7160602f6365727a7573642d5e7f647976693522207d753522206778757e352220414275757c3522207c71657e73787563">Get notified</a>
+        <a href="#download">Download</a>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
@@ -174,8 +174,8 @@
       </div>
       <div class="foot-col">
         <h4>Support</h4>
-        <a href="#" data-open-support>Contact support</a>
-        <a href="/cdn-cgi/l/email-protection#7b080e0b0b14090f3b0a091e1e17551a0b0b"><span class="__cf_email__" data-cfemail="a3d0d6d3d3ccd1d7e3d2d1c6c6cf8dc2d3d3">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#0e7d7b7e7e617c7a4e7f7c6b6b62206f7e7e"><span class="__cf_email__" data-cfemail="d2a1a7a2a2bda0a692a3a0b7b7befcb3a2a2">[email&#160;protected]</span></a>
+        <a href="index.html#features">FAQ</a>
       </div>
     </div>
   </div>
@@ -184,56 +184,6 @@
     <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></span>
   </div>
 </footer>
-<div class="modal" id="supportModal" aria-hidden="true">
-  <div class="modal-scrim" data-close></div>
-  <div class="modal-shell">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
-      <button class="modal-close" type="button" data-close aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-      </button>
-      <span class="eyebrow">Support</span>
-      <h2 class="display" id="supportTitle">How can we help?</h2>
-      <p class="sub">Questions, bugs, or a feature you'd love to see — send it our way and we'll get back to you.</p>
-      <form id="supportForm" action="https://api.staticforms.dev/submit" method="POST" novalidate>
-        <input type="hidden" name="apiKey" value="sf_827bdb34bec61e9b6d67c569">
-        <div class="field">
-          <label for="sf-name">Name</label>
-          <input id="sf-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
-        </div>
-        <div class="field">
-          <label for="sf-email">Email</label>
-          <input id="sf-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-        </div>
-        <div class="field">
-          <label for="sf-message">Comments</label>
-          <textarea id="sf-message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
-        </div>
-        <input type="hidden" name="subject" value="New QReel support message">
-        <input type="text" name="honeypot" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
-        <p class="form-error" id="sf-error">Something went wrong. Please try again, or email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="04777174746b76704475766161682a657474">[email&#160;protected]</a>.</p>
-        <div class="form-actions">
-          <button class="btn btn-primary btn-lg" type="submit">Send message</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<div class="modal" id="thanksModal" aria-hidden="true">
-  <div class="modal-scrim" data-close></div>
-  <div class="modal-shell">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
-      <button class="modal-close" type="button" data-close aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-      </button>
-      <div class="modal-success-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
-      <h2 class="display" id="thanksTitle">Thank you for your feedback</h2>
-      <p class="sub">We've got your message and we'll be in touch soon. Thanks for helping make QReel better.</p>
-      <div class="form-actions">
-        <button class="btn btn-primary btn-lg" type="button" data-close>Done</button>
-      </div>
-    </div>
-  </div>
-</div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="qr-art.js"></script>
 <script src="site.js"></script>
 </body>
