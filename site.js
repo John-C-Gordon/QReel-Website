@@ -1,10 +1,20 @@
 /* QReel marketing site — shared behavior */
 (function () {
-  var LOGO = "assets/QReelWordmark.svg";
+  var LOGO = "assets/QReel-app-icon-reef-1024.png";
 
   /* ---- theme: QReel ships its signature dark teal ambient ---- */
   function initTheme() {
-    document.documentElement.setAttribute("data-theme", "dark");
+    var root = document.documentElement;
+    var saved = null;
+    try { saved = localStorage.getItem("qreel-theme"); } catch (e) {}
+    root.setAttribute("data-theme", saved === "light" ? "light" : "dark");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-theme-toggle]"), function (btn) {
+      btn.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("qreel-theme", next); } catch (e) {}
+      });
+    });
   }
 
   /* ---- declarative QR rendering ---- */
