@@ -61,6 +61,15 @@
 .soon-badge { display: inline-flex; align-items: center; gap: 9px; padding: 9px 16px; border-radius: var(--r-pill); background: var(--surface-card); border: 1px solid var(--hairline); color: var(--text-secondary); font-weight: 800; font-size: 13px; letter-spacing: 0.01em; }
 .soon-badge svg { width: 17px; height: 17px; }
 .soon-req { color: var(--text-tertiary); font-weight: 700; font-size: 14px; }
+/* App Store badge variants */
+.appstore-badge--nav { height: 38px; flex: none; }
+.appstore-badge--price { height: 56px; margin-top: 24px; }
+/* Sunlit-garden reef along the page bottom (footer) */
+.foot { position: relative; overflow: hidden; padding-bottom: 200px; }
+.foot .reef-hero { position: absolute; left: 0; right: 0; bottom: 0; height: 300px; z-index: 0; pointer-events: none; }
+.foot > .wrap, .foot > .foot-legal { position: relative; z-index: 1; }
+.reef-hero .reef-img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.reef-hero .reef-fade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--bg-app) 0%, rgba(7,59,76,0.72) 30%, rgba(7,59,76,0) 66%); }
 </style>
 <header class="nav">
   <div class="wrap nav-inner">
@@ -71,7 +80,7 @@
     <nav class="nav-links">
       <a class="hide-sm" href="index.html#features">Features</a>
       <a class="hide-sm" href="index.html#pricing">Pricing</a>
-      <a class="btn btn-primary" style="padding:10px 20px;font-size:15px;white-space:nowrap;flex:none;" href="https://apps.apple.com/us/app/qreel/id6787137013">Download</a>
+      <a class="appstore-badge appstore-badge--nav" href="https://apps.apple.com/us/app/qreel/id6787137013" aria-label="Download QReel on the App Store"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="120" height="40"></a>
     </nav>
   </div>
 </header>
@@ -170,7 +179,7 @@
         <span class="price-eyebrow">Launch pricing</span>
         <h3 class="display">One plan. Every feature.</h3>
         <p>Unlimited styled codes, hi-res export and scan tracking across iPhone and iPad — for less than the $9.99&#8239;/month the others ask.</p>
-        <a class="btn price-cta" href="https://apps.apple.com/us/app/qreel/id6787137013">Download on the App Store</a>
+        <a class="appstore-badge appstore-badge--price" href="https://apps.apple.com/us/app/qreel/id6787137013" aria-label="Download QReel on the App Store"><img src="assets/app-store-badge.svg" alt="Download on the App Store" width="120" height="40"></a>
       </div>
       <div class="pr">
         <div class="plan-main"><span class="amt">$2.99</span><span class="per">/month</span></div>
@@ -180,6 +189,7 @@
   </div>
 </section>
 <footer class="foot">
+  <div class="reef-hero"><img class="reef-img" src="assets/reef-hero.svg" alt="" aria-hidden="true" width="1440" height="540"><span class="reef-fade"></span></div>
   <div class="wrap foot-inner">
     <div class="foot-brand">
       <div class="fb"><img src="assets/QReel-app-icon-reef-1024.png" alt="QReel"><span>QReel</span></div>
@@ -200,7 +210,7 @@
       <div class="foot-col">
         <h4>Support</h4>
         <a href="#" data-open-support>Contact support</a>
-        <a href="/cdn-cgi/l/email-protection#f1828481819e8385b1808394949ddf908181"><span class="__cf_email__" data-cfemail="7f0c0a0f0f100d0b3f0e0d1a1a13511e0f0f">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#2a595f5a5a45585e6a5b584f4f46044b5a5a"><span class="__cf_email__" data-cfemail="b2c1c7c2c2ddc0c6f2c3c0d7d7de9cd3c2c2">[email&#160;protected]</span></a>
       </div>
     </div>
   </div>
@@ -235,7 +245,7 @@
         </div>
         <input type="hidden" name="subject" value="New QReel support message">
         <input type="text" name="honeypot" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
-        <p class="form-error" id="sf-error">Something went wrong. Please try again, or email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="70030500001f020430010215151c5e110000">[email&#160;protected]</a>.</p>
+        <p class="form-error" id="sf-error">Something went wrong. Please try again, or email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed9e989d9d829f99ad9c9f888881c38c9d9d">[email&#160;protected]</a>.</p>
         <div class="form-actions">
           <button class="btn btn-primary btn-lg" type="submit">Send message</button>
         </div>
